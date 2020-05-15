@@ -1,7 +1,6 @@
 package Secao4_InstrucoesDeControle;
 
 public class Empregado {
-	private int id;
 	private String nome;
 	private int horasTrabalhadas;
 	private double valorSalarioHora;
@@ -50,13 +49,5 @@ public class Empregado {
 
 	public void setValorSalarioHora(double valorSalarioHora) {
 		this.valorSalarioHora = valorSalarioHora;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 }
