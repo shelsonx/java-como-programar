@@ -14,10 +14,10 @@ public class QuadradoDeAsteriscos {
 		
 			
 		 if(lado >=1 && lado <= 20) {
-			int tamanhoEspaco = lado - 2;			
+			int tamanhoEspaco = (lado * 2) - 3;			
 			//espaco = espaco.repeat(tamanhoEspaco);
 			while(contador < lado ) {
-				System.out.print("*");
+				System.out.print("* ");
 				contador++;
 			}
 			
@@ -33,12 +33,12 @@ public class QuadradoDeAsteriscos {
 			contador = 0;
 			while(contador < lado ) {
 				if(lado !=1)
-					System.out.print("*");
+					System.out.print("* ");
 				contador++;
 			}
 		}
 		else {
-			System.out.printf("Valor inválido!%n...%n");
+			System.out.printf("Valor invÃ¡lido!%n...%n");
 		}		
 		input.close();
 	}
