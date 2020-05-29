@@ -1,17 +1,17 @@
 /*
-Fazendo a diferença
-4.38 (Impondo privacidade com criptografia) O crescimento explosivo de comunicação e armazenamento de dados na internet e em
-computadores conectados por ela aumentou muito a preocupação com a privacidade. O campo da criptografia envolve a codificação de
-dados para torná-los difíceis de acessar (e espera-se — com os esquemas mais avançados — impossíveis de acessar) para usuários sem
-autorização de leitura. Nesse exercício, você investigará um esquema simples para criptografar e descriptografar dados. Uma empresa 
+Fazendo a diferenÃ§a
+4.38 (Impondo privacidade com criptografia) O crescimento explosivo de comunicaÃ§Ã£o e armazenamento de dados na internet e em
+computadores conectados por ela aumentou muito a preocupaÃ§Ã£o com a privacidade. O campo da criptografia envolve a codificaÃ§Ã£o de
+dados para tornÃ¡-los difÃ­ceis de acessar (e espera-se â€” com os esquemas mais avanÃ§ados â€” impossÃ­veis de acessar) para usuÃ¡rios sem
+autorizaÃ§Ã£o de leitura. Nesse exercÃ­cio, vocÃª investigarÃ¡ um esquema simples para criptografar e descriptografar dados. Uma empresa 
 que quer enviar dados pela internet pediu-lhe que escrevesse um programa que criptografe dados a fim de que eles possam ser transmitidos
-com maior segurança. Todos os dados são transmitidos como inteiros de quatro dígitos. Seu aplicativo deve ler um inteiro de quatro dígitos
-inserido pelo usuário e criptografá-lo da seguinte maneira: substitua cada dígito pelo resultado da adição de 7 ao dígito, obtendo o 
-restante depois da divisão do novo valor por 10. Troque então o primeiro dígito pelo terceiro e o segundo dígito pelo quarto. Então, 
-imprima o inteiro criptografado. Escreva um aplicativo separado que receba a entrada de um inteiro de quatro dígitos criptografado 
-e o descriptografe (revertendo o esquema de criptografia) para formar o número original. [Projeto de leitura opcional: pesquise a 
-“criptografia de chave pública” em geral e o esquema de chave pública específica PGP (Pretty Good Privacy). 
-Você também pode querer investigar o esquema RSA, que é amplamente usado em aplicativos robustos industriais.]
+com maior seguranÃ§a. Todos os dados sÃ£o transmitidos como inteiros de quatro dÃ­gitos. Seu aplicativo deve ler um inteiro de quatro dÃ­gitos
+inserido pelo usuÃ¡rio e criptografÃ¡-lo da seguinte maneira: substitua cada dÃ­gito pelo resultado da adiÃ§Ã£o de 7 ao dÃ­gito, obtendo o 
+restante depois da divisÃ£o do novo valor por 10. Troque entÃ£o o primeiro dÃ­gito pelo terceiro e o segundo dÃ­gito pelo quarto. EntÃ£o, 
+imprima o inteiro criptografado. Escreva um aplicativo separado que receba a entrada de um inteiro de quatro dÃ­gitos criptografado 
+e o descriptografe (revertendo o esquema de criptografia) para formar o nÃºmero original. [Projeto de leitura opcional: pesquise a 
+â€œcriptografia de chave pÃºblicaâ€ em geral e o esquema de chave pÃºblica especÃ­fica PGP (Pretty Good Privacy). 
+VocÃª tambÃ©m pode querer investigar o esquema RSA, que Ã© amplamente usado em aplicativos robustos industriais.]
 */
 
 package Secao4_InstrucoesDeControle;
@@ -21,22 +21,22 @@ public class CriptografiaSimples2 {
 		Scanner input = new Scanner(System.in);
 		
 		//Entrada de dados
-		System.out.printf("Informe um número inteiro positivo: %n");
+		System.out.printf("Informe um nÃºmero inteiro positivo: %n");
 		int numero = input.nextInt();
 		int quantidadeDeDigitos = retornaQuantidadeDeDegitos(numero);
 		
-		//validação dos dados	
+		//validaÃ§Ã£o dos dados	
 		while(quantidadeDeDigitos != 4) {
-			System.out.println("Informe um número inteiro positivo: ");
+			System.out.printf("Informe um nÃºmero inteiro positivo: %n");
 			numero = input.nextInt();
 			quantidadeDeDigitos = retornaQuantidadeDeDegitos(numero);
 		}
 		
 		int numeroEncriptado = criptografar(numero);
-		System.out.println("Número Encriptado: "+numeroEncriptado);
+		System.out.println("NÃºmero Encriptado: "+numeroEncriptado);
 		
 		int numeroDecriptado = descriptografar(numeroEncriptado);
-		System.out.println("Número Decriptado: "+numeroDecriptado);
+		System.out.println("NÃºmero Decriptado: "+numeroDecriptado);
 		
 		input.close();
 	}
@@ -78,10 +78,10 @@ public class CriptografiaSimples2 {
 		int numModificado = 0;
 
 		while(contador >= 1) {
-			//separa o número em dígitos
-			//soma cada dígito a 7, pega o resto da divisão do novo numero por 10
+			//separa o nÃºmero em dÃ­gitos
+			//soma cada dÃ­gito a 7, pega o resto da divisÃ£o do novo numero por 10
 			numModificado =  ((retornaDigito(numero, contador) + 7) % 10);
-			//inverte os números
+			//inverte os nÃºmeros
 			if(contador == 4) 
 				num3 = numModificado;
 			
@@ -95,7 +95,7 @@ public class CriptografiaSimples2 {
 				num2 = numModificado;
 			contador--;
 		}
-		//junta os dígitos novamente
+		//junta os dÃ­gitos novamente
 		int numeroCript = formaNumero(num1, num2, num3, num4);		
 		return numeroCript;
 	}
