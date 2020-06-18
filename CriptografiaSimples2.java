@@ -21,13 +21,13 @@ public class CriptografiaSimples2 {
 		Scanner input = new Scanner(System.in);
 		
 		//Entrada de dados
-		System.out.printf("Informe um número inteiro positivo: %n");
+		System.out.printf("Informe um número inteiro de 4 digitos positivo: %n");
 		int numero = input.nextInt();
 		int quantidadeDeDigitos = retornaQuantidadeDeDegitos(numero);
 		
 		//validação dos dados	
 		while(quantidadeDeDigitos != 4) {
-			System.out.printf("Informe um número inteiro positivo: %n");
+			System.out.printf("Informe um número inteiro de 4 digitos positivo: %n");
 			numero = input.nextInt();
 			quantidadeDeDigitos = retornaQuantidadeDeDegitos(numero);
 		}
