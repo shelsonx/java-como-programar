@@ -2,7 +2,7 @@ package Secao5_InstrucoesDeControleParte2;
 
 public class CalculandoOValorDePI {
 	public static void main(String[] args) {
-		calculaPI(753683);// termo que encontra o primeiro 3.14.15 é = 753683
+		calculaPI(753683);// termo que encontra o primeiro 3.14159 Ã© = 753683
 	}
 	
 	private static void calculaPI(int valor) {
